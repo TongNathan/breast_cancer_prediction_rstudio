@@ -18,10 +18,3 @@ breast_cancer_data <- na.omit(breast_cancer_data)
 
 #Add names to the different columns in the data.frame
 colnames(breast_cancer_data) <- c("class","age","menopause","tumor_size","inv_nodes","node_caps","deg_malig","breast","breast_quad","irradiat")
-
-#hello
-
-<<<<<<< HEAD
-#hello from Henry
-=======
-#helloworld
