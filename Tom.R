@@ -18,3 +18,16 @@ breast_cancer_data <- na.omit(breast_cancer_data)
 
 #Add names to the different columns in the data.frame
 colnames(breast_cancer) <- c("class","age","menopause","tumor_size","inv_nodes","node_caps","deg_malig","breast","breast_quad","irradiat")
+
+#Bar Chart to visualize location 
+breastQuadFreq <- table(breast_cancer$breast_quad)
+barplot(breastQuadFreq)
+
+breastAgeFreq <- table(breast_cancer$age)
+barplot(breastAgeFreq)
+
+ggplot(breast_cancer, aes(age, tumor_size )) + geom_point()
+
+tumorCount <- data.frame(table(breast_cancer$age, breast_cancer$tumor_size))
+names(tumorCount) <- c("age", "tumor_size", "count")
+ggplot(data = tumorCount, aes(x = age, y = count, fill = tumor_size)) + geom_bar(stat="identity")
