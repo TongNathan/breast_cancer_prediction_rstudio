@@ -26,8 +26,6 @@ barplot(breastQuadFreq)
 breastAgeFreq <- table(breast_cancer$age)
 barplot(breastAgeFreq)
 
-ggplot(breast_cancer, aes(age, tumor_size )) + geom_point()
-
 tumorCount <- data.frame(table(breast_cancer$age, breast_cancer$tumor_size))
 names(tumorCount) <- c("age", "tumor_size", "count")
 ggplot(data = tumorCount, aes(x = age, y = count, fill = tumor_size)) + geom_bar(stat="identity")
