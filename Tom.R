@@ -29,3 +29,11 @@ barplot(breastAgeFreq)
 tumorCount <- data.frame(table(breast_cancer$age, breast_cancer$tumor_size))
 names(tumorCount) <- c("age", "tumor_size", "count")
 ggplot(data = tumorCount, aes(x = age, y = count, fill = tumor_size)) + geom_bar(stat="identity")
+
+menoCount <- data.frame(table(breast_cancer$menopause, breast_cancer$tumor_size))
+names(menoCount) <- c("Menopause", "tumor_size", "count")
+ggplot(data = menoCount, aes(x = Menopause, y = count, fill = tumor_size)) + geom_bar(position="fill")
+
+ggplot(data = breast_cancer_clean, aes(menopause, fill = tumor_size)) + geom_bar(position="fill")
+
+ggplot(data = breast_cancer_clean, aes(breast, fill = tumor_size)) + geom_bar(position="fill")
